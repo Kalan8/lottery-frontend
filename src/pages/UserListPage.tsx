@@ -63,8 +63,8 @@ export default function UserListPage() {
             <TableHead className="text-gray-500 w-[100px]">ID</TableHead>
             <TableHead className="text-gray-500 w-60 text-left">Name</TableHead>
             <TableHead className="text-gray-500 w-60 text-left">Surname</TableHead>
-            <TableHead className="text-gray-500  text-left">Email</TableHead>
-            <TableHead className="text-gray-500 text-right ">Actions</TableHead>
+            <TableHead className="text-gray-500 text-left">Email</TableHead>
+            <TableHead className="text-gray-500 w-34 text-center">Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -82,6 +82,7 @@ export default function UserListPage() {
                   <Pencil size={16} />
                 </button>
                 <button
+                  title="Delete"
                   onClick={() => handleDelete(user.id)}
                   className="flex items-center m-1 gap-1 px-3 py-1 text-sm font-medium text-red-600 border border-red-300 rounded-xl hover:bg-red-50 transition">
                   <Trash2 size={16} />
