@@ -6,7 +6,7 @@ The app is built using **React**, **TypeScript**, **Vite**, and **TailwindCSS**,
 The backend project is available at `https://github.com/Kalan8/backend-demo`
 
 Both projects are solely sandboxes for testing backend/frontend techs, concepts and does not address a specific business need.
-It was started very recently and is a work in progress. A [What's next](#what's-next) section below lists the next developments that would be necessary/good to enhance the application.
+It was started very recently and is a work in progress. A [What's next](#whats-next) section below lists the next developments that would be necessary/good to enhance the application.
 
 ---
 
@@ -14,7 +14,7 @@ It was started very recently and is a work in progress. A [What's next](#what's-
 
 * [Tech Stack](#tech-stack)
 * [Features](#features)
-* [What's next](#what's-next)
+* [What's next](#whats-next)
 * [Getting Started](#getting-started)
 * [API Integration](#api-integration)
 
