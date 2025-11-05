@@ -5,12 +5,14 @@ import UserForm from "../components/UserForm";
 import { fetchUsers } from "../services/api";
 import type { User } from "../types/user";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 export default function UserListPage() {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-   // Later: Change to async await   
+  // Later: Change to async await   
   const handleFetchUsers = () => {
     fetchUsers()
     .then((data) => {
@@ -34,7 +36,7 @@ export default function UserListPage() {
     if (!confirm("Are you sure you want to delete this user?")) return;
 
     try {
-      const res = await fetch(`http://localhost:8080/api/users/${id}`, {
+      const res = await fetch(API_BASE_URL + `/api/users/${id}`, {
         method: "DELETE",
       });
 
