@@ -103,8 +103,6 @@ The application could send mail to the registered people to indicate if they hav
 ---
 
 ### ⚠️ Notice that these next sections below only concern Frontend part
----
-
 
 ## Frontend Tech Stack
 
