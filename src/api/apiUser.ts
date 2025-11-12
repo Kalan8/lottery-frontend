@@ -1,14 +1,16 @@
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-export async function fetchUsers() {
-  const response = await fetch(API_BASE_URL + "/api/users");
+const USER_API = "/api/users";
+
+export const fetchUsers = async () => {
+  const response = await fetch(API_BASE_URL + USER_API);
   if (!response.ok) {
     throw new Error("Failed to fetch users");
   }
   return response.json();
 }
 
-export async function createUser(user: { name: string; surname: string; email: string }) {
+export const createUser = async (user : {name: string; surname:string; email:string}) => {
   const response = await fetch(API_BASE_URL + "/api/users", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -21,3 +23,4 @@ export async function createUser(user: { name: string; surname: string; email: s
 
   return response.json();
 }
+

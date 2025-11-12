@@ -7,8 +7,8 @@ import type { User } from "../types/user";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-export default function UserListPage() {
-  const [users, setUsers] = useState<User[]>([]);
+const UserListPage= () => {
+const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -103,3 +103,5 @@ export default function UserListPage() {
     </div>
   )
 };
+
+export default UserListPage;

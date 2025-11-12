@@ -5,14 +5,14 @@ type Props = {
   onUserCreated: () => void;
 };
 
-export default function UserForm({ onUserCreated }: Readonly<Props>) {
+const UserForm = ({ onUserCreated }: Readonly<Props>) => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function handleSubmit(e: React.FormEvent) {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setLoading(true);
@@ -77,3 +77,5 @@ export default function UserForm({ onUserCreated }: Readonly<Props>) {
     </form>
   );
 }
+
+export default UserForm;
