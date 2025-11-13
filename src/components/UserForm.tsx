@@ -32,9 +32,9 @@ const UserForm = ({ onUserCreated }: Readonly<Props>) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className=" p-6 rounded-2xl shadow border border-gray-200  mb-6"
+      className="m-5 p-6 rounded-2xl shadow border border-gray-200 mb-6"
     >
-      <h2 className="text-xl font-semibold mb-4  text-gray-500">Create New User</h2>
+      <h2 className="text-xl font-semibold mb-4">Create New User</h2>
 
       {error && <p className="text-red-500 mb-2">{error}</p>}
 
@@ -70,9 +70,9 @@ const UserForm = ({ onUserCreated }: Readonly<Props>) => {
         <button
           type="submit"
           disabled={loading}
-          className="bg-blue-600 text-gray-500 rounded-lg py-2 px-4 hover:bg-blue-700 disabled:opacity-50 m-1"
+          className="bg-gray-200 dark:bg-gray-800 hover:bg-muted/50 rounded-lg py-2 px-4 disabled:opacity-50 m-1"
         >
-          {loading ? "Creating..." : "Add User"}
+          {loading ? "Creating..." : "Create"}
         </button>
     </form>
   );

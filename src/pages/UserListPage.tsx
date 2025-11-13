@@ -12,8 +12,7 @@ const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Later: Change to async await   
-  const handleFetchUsers = () => {
+    const handleFetchUsers = () => {
     fetchUsers()
     .then((data) => {
       setUsers(data)
@@ -28,7 +27,7 @@ const [users, setUsers] = useState<User[]>([]);
 
   const handleEdit = (user: User) => {
     console.log("Edit user:", user);
-    // Later: open a modal or something like that
+    // TODO: open a modal or something like that
   };
 
 
@@ -50,23 +49,23 @@ const [users, setUsers] = useState<User[]>([]);
     }
   };
 
-  if (loading) return <p className= "text-gray-500">Loading users...</p>;
+  if (loading) return <p>Loading users...</p>;
   if (error) return <p className="text-red-700">{error}</p>;
 
   return (
-    <div className="flex flex-col gap-1 rounded-xl p-1 inset-ring inset-ring-gray-950/5 m-30">
-      <h1 className="text-2xl font-bold mb-6 text-gray-500">User Management</h1>
+    <div className="flex flex-col gap-1 rounded-xl p-1 inset-ring inset-ring-gray-950/5 dark:inset-ring dark:inset-ring-gray-50/5 m-30">
+      <h1 className="text-2xl font-bold mb-6">User Management</h1>
       
       <UserForm onUserCreated={handleFetchUsers} />
 
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="text-gray-500 w-[100px]">ID</TableHead>
-            <TableHead className="text-gray-500 w-60 text-left">Name</TableHead>
-            <TableHead className="text-gray-500 w-60 text-left">Surname</TableHead>
-            <TableHead className="text-gray-500 text-left">Email</TableHead>
-            <TableHead className="text-gray-500 w-34 text-center">Actions</TableHead>
+            <TableHead className="w-[100px]">ID</TableHead>
+            <TableHead className="w-60 text-left">Name</TableHead>
+            <TableHead className="w-60 text-left">Surname</TableHead>
+            <TableHead className="text-left">Email</TableHead>
+            <TableHead className="w-34 text-center">Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -80,13 +79,13 @@ const [users, setUsers] = useState<User[]>([]);
                 <button
                   title="Edit"
                   onClick={() => handleEdit}
-                  className="flex items-center m-1 gap-1 px-3 py-1 text-sm font-medium text-blue-600 border border-blue-300 rounded-xl hover:bg-blue-50 transition">
+                  className="flex items-center m-1 gap-1 px-3 py-1 text-sm font-medium text-blue-600 border  rounded-xl transition">
                   <Pencil size={16} />
                 </button>
                 <button
                   title="Delete"
                   onClick={() => handleDelete(user.id)}
-                  className="flex items-center m-1 gap-1 px-3 py-1 text-sm font-medium text-red-600 border border-red-300 rounded-xl hover:bg-red-50 transition">
+                  className="flex items-center m-1 gap-1 px-3 py-1 text-sm font-medium text-red-600 border rounded-xl transition">
                   <Trash2 size={16} />
                 </button>
               </TableCell>
@@ -95,8 +94,8 @@ const [users, setUsers] = useState<User[]>([]);
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell className="text-gray-500 text-left" colSpan={4}>Total of users</TableCell>
-            <TableCell className="text-gray-500 text-right">{users.length}</TableCell>
+            <TableCell className="text-left" colSpan={4}>Total of users</TableCell>
+            <TableCell className="text-right">{users.length}</TableCell>
           </TableRow>
         </TableFooter>
       </Table>
