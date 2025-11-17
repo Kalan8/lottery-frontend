@@ -8,7 +8,7 @@ interface NavigationBtnProps {
 const NavigationBtn = (props: NavigationBtnProps) => {
   const navigate = useNavigate();
 
-  let titleBtn = props.goTo === "" ? "Home" : "Lottery management";
+  const titleBtn = props.goTo === "" ? "Home" : "Lottery management";
 
   return (
     <button
