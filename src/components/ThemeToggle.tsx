@@ -3,7 +3,7 @@ import { Moon, Sun } from 'lucide-react';
 
 type Theme = 'light' | 'dark';
 
-export const ThemeToggle = () => {
+const ThemeToggle = () => {
   // Get theme from localStorage or default to 'light'
   const [theme, setTheme] = useState<Theme>(
     () => (localStorage.getItem('theme') as Theme) || 'light'
@@ -30,9 +30,11 @@ export const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="hover:bg-muted/50 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white"
+      className="hover:bg-muted/50 p-2 border rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white"
     >
       {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
     </button>
   );
 };
+
+export default ThemeToggle;
