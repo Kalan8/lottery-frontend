@@ -2,7 +2,6 @@ import js from '@eslint/js'; // Recommended JavaScript rules
 import globals from 'globals';
 import tsEslint from 'typescript-eslint'; // Renamed to avoid conflict
 import pluginReact from 'eslint-plugin-react';
-import pluginReactHooks from 'eslint-plugin-react-hooks';
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import { defineConfig, globalIgnores } from 'eslint/config';
